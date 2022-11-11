@@ -2,8 +2,6 @@ import React, {useState, useEffect} from "react";
 import StockCard from "./StockCard";
 import NavBar from "./NavBar";
 
-{/* consider setting useeffect in here to abstract away from index */}
-
 function StockList() {
  
     const [stocks, setStocks] = useState([]);
@@ -14,7 +12,6 @@ function StockList() {
       const res = await fetch('https://financialmodelingprep.com/api/v3/nasdaq_constituent?apikey=YOUR_API_KEY_HERE');
       const info = await res.json(); 
       setStocks(info);
-      {/* console logging the symbols or attempting to so we can pair with the searchbar */}
     }
     apiCall();
   }, [])
